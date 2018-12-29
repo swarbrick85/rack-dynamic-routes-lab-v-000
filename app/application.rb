@@ -11,7 +11,7 @@ class Application
       resp.status = 404
     elsif req.path.match(/items/)
       item = req.env["PATH_INFO"].split("/items/")[1]
-      binding.pry
+      
       if (@@items.find {|itemm| itemm.name == item})
         resp.write "#{(@@items.find {|itemm| itemm.name == item}).price}"
       else 
