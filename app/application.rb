@@ -16,6 +16,7 @@ class Application
         resp.write "#{(@@items.find {|itemm| itemm.name == item}).price}"
       else 
         resp.write "Item not found"
+        resp.status = 400
       end 
     end 
     resp.finish
